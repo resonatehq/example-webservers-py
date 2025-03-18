@@ -1,4 +1,4 @@
-# django-webserver
+# Example Resonate application - Django webserver
 
 This application has been tested with Resonate Python SDK v.0.4.12.
 
