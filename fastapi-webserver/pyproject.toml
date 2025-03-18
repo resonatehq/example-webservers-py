@@ -1,0 +1,26 @@
+[project]
+name = "fastapi-webserver"
+version = "0.1.0"
+description = "FastAPI + Resonate example webserver"
+authors = [
+    { name = "ResonateHQ", email = "contact@resonatehq.io" }
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+dependencies = [
+    "resonate-sdk>=0.4.12",
+    "fastapi[standard]>=0.115.0",
+]
+
+[project.scripts]
+"webserver" = "src.webserver:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
