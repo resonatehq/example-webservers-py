@@ -1,24 +1,27 @@
 from flask import Flask, jsonify
-from resonate import Resonate, Context
-from resonate.stores import LocalStore
-
-app = Flask(__name__)
-resonate = Resonate(store=LocalStore())
+from resonate import Resonate
 
 
-def baz(_: Context):
-    return 1
+app = Flask("flask-webserver")
+resonate = Resonate.local()
 
 
-def bar(ctx: Context):
-    v = yield ctx.lfc(baz)
-    return v + 1
+def baz(_):
+    print("running baz")
+    return "hello world!"
+
+
+def bar(ctx):
+    print("running bar")
+    result = yield ctx.lfc(baz)
+    return result
 
 
 @resonate.register
-def foo(ctx: Context):
-    v = yield ctx.lfc(bar)
-    return v + 1
+def foo(ctx):
+    print("running foo")
+    result = yield ctx.lfc(bar)
+    return result
 
 
 @app.route("/")

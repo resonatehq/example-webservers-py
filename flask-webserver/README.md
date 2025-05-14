@@ -1,4 +1,4 @@
-# Example Resonate application - Flask webserver
+# Flask webserver | Resonate example application
 
 This example application has been tested with Resonate Python SDK v0.4.12
 

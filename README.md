@@ -1,4 +1,4 @@
-# Resonate example applications - webservers
+# Python webservers | Resonate example application
 
 - [Django](./django-webserver/README.md)
 - [FastAPI](./fastapi-webserver/README.md)
